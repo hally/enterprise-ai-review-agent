@@ -18,9 +18,9 @@ This system demonstrates enterprise-level AI orchestration where specialized age
 ## How It Works
 ```
 User Input (Technical Problem) ↓
-Architecture Agent analyzes → Cost Agent refines → Security Agent validates ↓
-                                                            Orchestrator synthesizes findings ↓
-                                                            Executive report with top 3 recommendations and implementation priority
+                                Architecture Agent analyzes → Cost Agent refines → Security Agent validates ↓
+                                                                                                    Orchestrator synthesizes findings ↓
+                                    Executive report with top 3 recommendations and implementation priority
 ```
 
 
