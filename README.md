@@ -39,7 +39,7 @@ pip install -r requirements.txt
 cp .env.example .env
 # Edit .env and add your OpenAI API key
 
-Local Testing
+# .Local Testing
 ```
 python
 
@@ -52,7 +52,7 @@ Should we use this approach?
 result = run_agent_review(problem)
 print(result["final_report"])
 ```
-AWS Deployment
+# AWS Deployment
 ```
 # Navigate to Terraform directory
 cd terraform
@@ -87,6 +87,29 @@ enterprise-ai-review-agent/
 ├── requirements.txt               # Python dependencies
 └── README.md
 ```
+## Production Deployment Architecture
+### Backend
+- AWS Lambda: Agentic AI orchestrator
+- DynamoDB: State and review storage
+- API Gateway: HTTP endpoints
+### Frontend Options (Recommended by Scale)
+**Small Scale (< 100 users):**
+AWS Lightsail + Simple HTML/JavaScript
+- Direct connection to API Gateway
+- Minimal latency
+- Cost: ~$5-10/month
+**Medium Scale (100-10K users):**
+AWS Amplify + React
+- Automatic CDN distribution
+- Managed hosting and SSL
+- Auto-scaling
+- Cost: ~$20-50/month + compute
+**Large Scale (10K+ users with real-time):**
+AWS AppSync + GraphQL + React
+- Real-time subscriptions (see agent progress live)
+- Efficient data transfer
+- Advanced caching
+- Cost: ~$100-500/month + compute
 
 # Design Decisions
 Why LangGraph Over Alternatives?
